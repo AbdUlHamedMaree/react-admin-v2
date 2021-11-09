@@ -1,0 +1,31 @@
+{
+  "root": "apps/scndainavia-tracking-dashboard-e2e",
+  "sourceRoot": "apps/scndainavia-tracking-dashboard-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nrwl/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/scndainavia-tracking-dashboard-e2e/cypress.json",
+        "devServerTarget": "scndainavia-tracking-dashboard:serve",
+        "tsConfig": "apps/scndainavia-tracking-dashboard-e2e/tsconfig.json"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "scndainavia-tracking-dashboard:serve:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "apps/scndainavia-tracking-dashboard-e2e/**/*.{js,ts}"
+        ]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["scndainavia-tracking-dashboard"]
+}

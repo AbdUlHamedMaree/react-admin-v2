@@ -1,0 +1,74 @@
+{
+  "root": "apps/scndainavia-tracking-dashboard",
+  "sourceRoot": "apps/scndainavia-tracking-dashboard/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:build",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "outputPath": "dist/apps/scndainavia-tracking-dashboard",
+        "index": "apps/scndainavia-tracking-dashboard/src/index.html",
+        "baseHref": "/",
+        "main": "apps/scndainavia-tracking-dashboard/src/main.tsx",
+        "polyfills": "apps/scndainavia-tracking-dashboard/src/polyfills.ts",
+        "tsConfig": "apps/scndainavia-tracking-dashboard/tsconfig.app.json",
+        "assets": [
+          "apps/scndainavia-tracking-dashboard/src/favicon.ico",
+          "apps/scndainavia-tracking-dashboard/src/assets"
+        ],
+        "styles": [],
+        "scripts": [],
+        "webpackConfig": "@nrwl/react/plugins/webpack"
+      },
+      "configurations": {
+        "production": {
+          "fileReplacements": [
+            {
+              "replace": "apps/scndainavia-tracking-dashboard/src/environments/environment.ts",
+              "with": "apps/scndainavia-tracking-dashboard/src/environments/environment.prod.ts"
+            }
+          ],
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": false,
+          "namedChunks": false,
+          "extractLicenses": true,
+          "vendorChunk": false
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/web:dev-server",
+      "options": {
+        "buildTarget": "scndainavia-tracking-dashboard:build",
+        "hmr": true
+      },
+      "configurations": {
+        "production": {
+          "buildTarget": "scndainavia-tracking-dashboard:build:production",
+          "hmr": false
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "apps/scndainavia-tracking-dashboard/**/*.{ts,tsx,js,jsx}"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/scndainavia-tracking-dashboard"],
+      "options": {
+        "jestConfig": "apps/scndainavia-tracking-dashboard/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

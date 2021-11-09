@@ -1,0 +1,7 @@
+{
+  "version": 2,
+  "projects": {
+    "scndainavia-tracking-dashboard": "apps/scndainavia-tracking-dashboard",
+    "scndainavia-tracking-dashboard-e2e": "apps/scndainavia-tracking-dashboard-e2e"
+  }
+}
