@@ -1,7 +1,11 @@
 {
   "version": 2,
   "projects": {
+    "core": "libs/core",
     "scndainavia-tracking-dashboard": "apps/scndainavia-tracking-dashboard",
-    "scndainavia-tracking-dashboard-e2e": "apps/scndainavia-tracking-dashboard-e2e"
+    "scndainavia-tracking-dashboard-e2e": "apps/scndainavia-tracking-dashboard-e2e",
+    "system": "libs/system",
+    "types": "libs/types",
+    "utils": "libs/utils"
   }
 }
